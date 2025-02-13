@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+body {
+  background-color: #000;
+  font-family: "Poppins";
+  width: 100%;
+  height: 100vh;
+  margin: 0px;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  color: white;
+  list-style-type: none;
+}
+li {
+  white-space: nowrap;
+}
+#bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.intro-container {
+  display: flex;
+  justify-content: center;
+  width: 50vw;
+  margin: auto 20vw;
+  animation: dissapear 0.7s ease-out forwards;
+  animation-delay: 2.5s;
+  & img {
+    animation: slide-left 1s ease;
+    width: 30vw;
+  }
+  & ul {
+    padding: 0;
+    margin: 0;
+    font-size: 5vw;
+    margin-bottom: 9vw;
+    & h1 {
+      cursor: pointer;
+      margin-bottom: 0.6vw;
+      background-image: linear-gradient(
+        to right,
+        #ffb902 0% 50%,
+        #fff 50% 100%
+      );
+      background-size: auto auto;
+      background-clip: border-box;
+      background-size: 200% auto;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textclip 5s linear infinite reverse;
+      animation-delay: 1s;
+      display: inline-block;
+    }
+    & h2 {
+      margin: 0;
+      font-size: 2.4vw;
+    }
+    animation: slide-right 1s ease;
+  }
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slide-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+#menu {
+  height: 100%;
+  opacity: 0;
+  text-align: center;
+  animation: appear 1.3s ease forwards;
+  animation-delay: 2.8s;
+  & ul {
+    display: inline-block;
+    text-align: left;
+    font-size: 5vw;
+    /* & li:nth-child(odd) > a::after {
+      animation: blink 3s infinite alternate;
+    } */
+  }
+  & a {
+    color: white;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 0.6vw;
+    background-image: linear-gradient(75deg, #fff, #ffb902, #fff);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 5s linear infinite reverse;
+    animation-delay: 1s;
+    display: inline-block;
+    &::before {
+      content: "-";
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 0.5vw;
+      width: 100%;
+      background-color: #ffb902;
+      border-radius: 0.5vw;
+      transition: 0.3s;
+      transition-timing-function: ease-in-out;
+      animation-delay: 2s;
+      transform: scaleX(0);
+    }
+    &:hover {
+      animation-play-state: paused;
+      &::after {
+        transform: scaleX(1);
+      }
+      &::before {
+        content: ">";
+      }
+    }
+  }
+}
+
+@keyframes dissapear {
+  to {
+    opacity: 0;
+    scale: 0;
+    display: none;
+  }
+}
+
+@keyframes appear {
+  from {
+    scale: 0;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+.footer {
+  width: 100vw;
+  border-top: 0.5vw solid #ffb902;
+  margin: 10vw 0;
+  display: flex;
+  flex-direction: column;
+  & div {
+    margin-top: 6vw 0;
+    display: flex;
+    justify-content: space-around;
+    & a {
+      & img {
+        max-width: 7vw;
+        min-width: 7vw;
+      }
+    }
+  }
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+.rotating-image {
+  width: 20vw;
+  justify-content: center;
+  opacity: 0;
+  scale: 0;
+
+  animation:
+    rotate 5s infinite linear,
+    appear 1.3s ease forwards;
+  transform-style: preserve-3d;
+  animation-delay: 2.8s;
+}
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
