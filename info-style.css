@@ -30,7 +30,7 @@ header {
   z-index: 1;
 
   & .rotating-image {
-    width: 18vw;
+    width: 14vh;
     margin: 0;
     animation: rotate 5s infinite linear;
     transform-style: preserve-3d;
@@ -206,9 +206,12 @@ strong {
     margin: 0 4vw;
     & h3 {
       margin-left: 2vw;
+      margin-bottom: 0.1vw;
     }
     & h4 {
       margin-left: 2vw;
+      font-size: 3vw;
+      margin-bottom: 0;
     }
     & section {
       & img {
@@ -224,6 +227,10 @@ strong {
       & div {
         border-top: 0.4vw solid gray;
       }
+      & ul {
+        padding-inline-start: 5vw;
+        font-size: 2vw;
+      }
       & ul li::marker {
         content: "✅ ";
       }
@@ -235,7 +242,7 @@ strong {
       width: 45vw;
 
       & h3 {
-        font-size: 4vw;
+        font-size: 6vw;
       }
     }
     & section:first-child {
@@ -277,5 +284,33 @@ strong {
   }
   to {
     transform: rotateY(360deg);
+  }
+}
+
+#mision-vision {
+  margin: 10vw 1vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-top: 0.5vw solid #ffb902;
+  h2 {
+    background-image: linear-gradient(to right, #ffb902 0% 50%, #fff 50% 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 5s linear infinite reverse;
+    animation-delay: 1s;
+  }
+  & article:last-child span:before {
+    content: "🌟";
+  }
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
   }
 }
