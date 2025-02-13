@@ -293,6 +293,8 @@ strong {
   flex-direction: column;
   text-align: center;
   border-top: 0.5vw solid #ffb902;
+    font-size:2.5vw;
+
   h2 {
     background-image: linear-gradient(to right, #ffb902 0% 50%, #fff 50% 100%);
     background-size: auto auto;
